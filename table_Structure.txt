@@ -1,0 +1,35 @@
+CREATE EXTERNAL TABLE twitter(
+retweet_count int,
+created_at timestamp,
+text string,
+id bigint,
+source string,
+in_reply_to_screen_name string,
+user struct<
+		location: string,
+		id: bigint,
+		id_str: bigint,
+		name: string,
+		screen_name: string,
+		geo_enabled: boolean;
+		lang: string,
+		protected: boolean;
+		verified: boolean;
+		followers_count: int,
+		friends_count: int,
+		listed_count: int,
+		favourites_count: int,
+		statuses_count: int,
+		profile_background_color: int>
+contributors string;
+is_quote_status boolean);
+entities struct<
+		user_mentions struct <
+					screen_name: string,
+					name :string,
+					id :bigint>
+		>
+)
+
+
+
